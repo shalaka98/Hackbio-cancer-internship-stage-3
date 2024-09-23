@@ -1,4 +1,4 @@
-```
+```{r, echo=TRUE, message=FALSE, warning=FALSE, results='hide'}
 #BiocManager::install("TCGAbiolinks")
 #BiocManager::install("edgeR")
 #BiocManager::install("limma")
