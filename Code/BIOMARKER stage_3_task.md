@@ -1,9 +1,9 @@
+```{r, echo=TRUE, message=FALSE, warning=FALSE, results='hide'}
 #BiocManager::install("TCGAbiolinks")
 #BiocManager::install("edgeR")
 #BiocManager::install("limma")
 #BiocManager::install("EDASeq")
 
-```{r, echo=TRUE, message=FALSE, warning=FALSE, results='hide'}
 library("TCGAbiolinks")
 library(SummarizedExperiment)
 library(biomaRt)
@@ -12,6 +12,7 @@ library("edgeR")
 library("EDASeq")
 library(gplots)
 ```
+```{r, echo=TRUE, message=FALSE, warning=FALSE, results='hide'}
 
 #getProjectSummary("TCGA-LUAD")
 
@@ -23,6 +24,8 @@ lung_acarcinoma <- GDCquery(project = "TCGA-LUAD",
 GDCdownload(lung_acarcinoma)
 lung.data <- GDCprepare(lung_acarcinoma)
 head(lung.data)
+```
+```{r, echo=TRUE, message=FALSE, warning=FALSE, results='hide'}
 # Explore Some Metadata Information
 lung.data$definition
 lung.data$cigarettes_per_day
@@ -41,7 +44,8 @@ head(lung_acarcinoma_meta)
 #filtering metadata for NA containing records
 NA_filtered_data <- na.omit(lung_acarcinoma_meta)
 head(NA_filtered_data)
-
+```
+```{r, echo=TRUE, message=FALSE, warning=FALSE, results='hide'}
 #select unstranded dataset
 luad.raw.data <- assays(lung.data) #help to extract information summarizing the experiment
 View(luad.raw.data$unstranded)
@@ -49,6 +53,8 @@ View(luad.raw.data$unstranded)
 selectedBarcodes <- c(subset(NA_filtered_data, race == "white" & pathologic_stage %in% c("Stage IA", "Stage IB") & sample_type == "Primary solid Tumor" & cigarettes_per_day < 1)$barcode[c(1:20)], subset(NA_filtered_data, race == "white" & pathologic_stage %in% c("Stage IA", "Stage IB") & sample_type == "Primary solid Tumor" & cigarettes_per_day > 3)$barcode[c(1:20)])
 selectedData <- luad.raw.data$unstranded[,c(selectedBarcodes)]
 View(selectedData)
+```
+```{r, echo=TRUE, message=FALSE, warning=FALSE, results='hide'}
 # Data normalization and filtering
 normData <- TCGAanalyze_Normalization(tabDF = selectedData, geneInfo = geneInfoHT, method = "geneLength")
 # filtering the genes with lowest expression
@@ -63,8 +69,11 @@ colnames(filtData)[21:40] <- paste0("regular_smoker_", 1:20)
 
 #saving the normalized count data table as csv file where first 20 columns are for irregular smoker (<1 cigarette per day) and the last 20 columns are for regular smoker (>2 cigarettes per day) 
 write.csv(filtData, file = "Normalized_count_Data_final.csv", row.names = TRUE)
+
 #filtData <- read.csv("/home/hp/Documents/Stage_3_task/Normalized_count_Data_final.csv", row.names = 1)
 View(filtData)
+```
+```{r, echo=TRUE, message=FALSE, warning=FALSE, results='hide'}
 #Differential Expression Analysis
 selectResults <- TCGAanalyze_DEA(
   mat1 = filtData[, grep("^irregular_smoker_", colnames(filtData))],  # Selecting the 'irregular_smoker' columns
@@ -80,6 +89,9 @@ selectResults.level <- TCGAanalyze_LevelTab(selectResults,"Irregular Smoker", "R
                                             filtData[,grep("^irregular_smoker_", colnames(filtData))],
                                             filtData[,grep("^regular_smoker_", colnames(filtData))])
 View(selectResults.level)
+```
+```{r, echo=TRUE, message=FALSE, warning=FALSE, results='hide'}
+
 #heatmap
 heat.data <- filtData[rownames(selectResults.level),]
 #color the plot by the type of smoking status
@@ -92,7 +104,8 @@ for (i in smoking.status){
     color_codes <- c(color_codes, "blue")
   }
 }
-
+```
+```{r, echo=TRUE, message=FALSE, warning=FALSE, results='hide'}
 # Now plot the heatmap
 heatmap.2(x=as.matrix(heat.data),
           col=hcl.colors(10, palette = "Viridis"),
@@ -107,6 +120,8 @@ heatmap.2(x=as.matrix(heat.data),
           na.color = "black",
           srtCol = 45,
           ColSideColors = color_codes)
+```
+```{r, echo=TRUE, message=FALSE, warning=FALSE, results='hide'}
 #Enrichment analysis
 #View the volcano plot first
 # Sample plot: x-axis (logFC), y-axis (-log10(FDR))
@@ -153,3 +168,4 @@ TCGAvisualize_EAbarplot(tf = rownames(down.EA$ResBP),
                         text.size = 2,
                         fig.width = 30,
                         fig.height = 15)
+```
