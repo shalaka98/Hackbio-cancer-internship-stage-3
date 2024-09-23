@@ -1,8 +1,9 @@
-```{r, echo=TRUE, message=FALSE, warning=FALSE, results='hide'}
 #BiocManager::install("TCGAbiolinks")
 #BiocManager::install("edgeR")
 #BiocManager::install("limma")
 #BiocManager::install("EDASeq")
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE, results='hide'}
 library("TCGAbiolinks")
 library(SummarizedExperiment)
 library(biomaRt)
@@ -10,7 +11,6 @@ library("limma")
 library("edgeR")
 library("EDASeq")
 library(gplots)
-
 ```
 
 #getProjectSummary("TCGA-LUAD")
