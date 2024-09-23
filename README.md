@@ -2,7 +2,6 @@
 ## Identification of Smoking-Associated Biomarkers in Stage I Lung Adenocarcinoma through Transcriptomic Profiling and Machine Learning
 
 
-We dentified potential lung cancer biomarkers from a dataset using differential expression and machine learning models
 
 ## Contents
 - **[Report](./Report.md)**: Detailed report of the analysis.
