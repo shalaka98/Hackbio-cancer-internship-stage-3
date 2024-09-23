@@ -3,7 +3,7 @@
 
 
 
-## Contents
+## Table of Contents
 - **[Report](./Report.md)**: Detailed report of the analysis.
 - **[Code](./Code.md)**: for data preprocessing, visualization, and analysis.
 - **[Images](./Images/)**: Visualizations of the gene expression data, including heatmaps and other relevant figures.
