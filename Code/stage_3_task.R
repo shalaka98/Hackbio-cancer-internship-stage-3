@@ -1,3 +1,4 @@
+```{r}
 #BiocManager::install("TCGAbiolinks")
 #BiocManager::install("edgeR")
 #BiocManager::install("limma")
@@ -9,6 +10,9 @@ library("limma")
 library("edgeR")
 library("EDASeq")
 library(gplots)
+
+```
+
 #getProjectSummary("TCGA-LUAD")
 
 #Download and preprocess data
