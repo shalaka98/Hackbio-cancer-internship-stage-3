@@ -21,17 +21,25 @@ ML analysis aimed to identify smoking-associated biomarkers in lung adenocarcino
 ## Results:
 Gene expression profiles from TCGA-LUAD were used to compare Regular and Irregular Smokers. RNAseq data revealed several DEGs. The volcano plot showed distinct clustering of Regular and Irregular Smokers. Out of 33,439 genes, 741 were upregulated, and 2,313 were downregulated, and enrichment analysis highlighted gene regulation, transcription, and metabolic homeostasis processes. 
 
-![Heatmap of DEGs by Smoking Status](Images/Heatmap_of_DEGs_by_Smoking_Status.png)
-<p align="center">Fig 1: Heatmap of DEGs by Smoking Status </p>
+<p align="center">
+    <img src="Images/Heatmap_of_DEGs_by_Smoking_Status.png" alt="Heatmap of DEGs by Smoking Status" width="400"/>
+    <br>Fig 1: Heatmap of DEGs by Smoking Status
+</p>
 
-![Volcano Plot with Colored Points](Images/Volcano_Plot_with_Colored_Points.png)
-<p align="center"> Fig 2: Volcano Plot with Colored Points </p>
+<p align="center">
+    <img src="Images/Volcano_Plot_with_Colored_Points.png" alt="Volcano Plot with Colored Points" width="400"/>
+    <br>Fig 2: Volcano Plot with Colored Points
+</p>
 
-![TCGAvisualize_EAbarplot_Output_downreg](Images/TCGAvisualize_EAbarplot_Output_downreg.jpg)
-<p align="center">Fig 3: TCGAvisualize_EAbarplot_Output_downreg </p>
+<p align="center">
+    <img src="Images/TCGAvisualize_EAbarplot_Output_downreg.jpg" alt="TCGAvisualize EAbarplot Output downreg" width="400"/>
+    <br>Fig 3: TCGAvisualize EAbarplot Output Downregulated Genes
+</p>
 
-![TCGAvisualize_EAbarplot_Output_upreg](Images/TCGAvisualize_EAbarplot_Output_upreg.jpg)
-<p align="center">Fig 4: TCGAvisualize_EAbarplot_Output_upreg </p>
+<p align="center">
+    <img src="Images/TCGAvisualize_EAbarplot_Output_upreg.jpg" alt="TCGAvisualize EAbarplot Output upreg" width="400"/>
+    <br>Fig 4: TCGAvisualize EAbarplot Output upregulated Genes
+
 
 The ML model was evaluated using a confusion matrix, classification report, accuracy, and ROC curve. It predicted 3 true positives, 4 true negatives, 1 false positive, and 1 false negative, with an overall accuracy of 87.5%. Precision was 100% for irregular smokers and 75% for regular smokers, while the F1-scores were 0.89 and 0.86, respectively. The ROC AUC was 0.93, indicating strong classification performance.
 
