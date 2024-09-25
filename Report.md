@@ -6,6 +6,11 @@
 Lung cancer is one of the most common carcinomas in the world and ranks first both in incidence and in mortality (Bray et al., 2024).  Lung adenocarcinoma (LUAD) is the most common subtype of non-small cell lung cancer (NSCLC), and NSCLC accounts for approximately 85% of all lung cancer cases(Gridelli et al., 2015). Smoking is its strongest risk factor and there is a significant and positive correlation between cigarette smoke and lung cancer(Hecht, 1999).
 In this study, we aimed to identify potential smoking-associated biomarkers of stage 1 lung Adenocarcinoma based on smoking habits using transcriptomic data and machine learning models. 
 
+![Heatmap of DEGs by Smoking Status](Images/Heatmap of DEGs by Smoking Status.png)
+<p align="center">Fig 1: [Heatmap of DEGs by Smoking Status </p>
+
+
+
 ## Materials and Methods:
 Transcriptome profiling data for lung adenocarcinoma was obtained from the TCGA-LUAD dataset, including 40 samples (20 irregular and 20 regular smokers) of white individuals with stage 1 tumors. Low-expression genes were filtered out. Differential expression analysis between irregular and regular smokers was performed using TCGAbiolinks in R, with criteria of Fdr ≤ 0.01 and logFC ≥ 2. Results were visualized with heatmaps and volcano plots, and enrichment analysis was conducted after mapping ensembl IDs to gene IDs.
 ML analysis aimed to identify smoking-associated biomarkers in lung adenocarcinoma. After cleaning and transposing the RNA-seq data, feature selection was done via variance thresholding. The dataset was split into training and test sets, and a Random Forest classifier was tuned using GridSearchCV. Model performance was evaluated with metrics like the confusion matrix, classification report, and ROC-AUC curve. The top 10 important genes were identified, suggesting potential smoking-related biomarkers.
