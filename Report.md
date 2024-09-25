@@ -1,18 +1,17 @@
-
-
+<h2 align="center">  Identification of Smoking-Associated Biomarkers in Stage I Lung Adenocarcinoma through Transcriptomic Profiling and Machine Learning </h2>
 
 ## Introduction
+Lung cancer is one of the most common carcinomas in the world and ranks first both in incidence and in mortality (Bray et al., 2024).  Lung adenocarcinoma (LUAD) is the most common subtype of non-small cell lung cancer (NSCLC), and NSCLC accounts for approximately 85% of all lung cancer cases(Gridelli et al., 2015). Smoking is its strongest risk factor and there is a significant and positive correlation between cigarette smoke and lung cancer(Hecht, 1999).
+In this study, we aimed to identify potential smoking-associated biomarkers of stage 1 lung Adenocarcinoma based on smoking habits using transcriptomic data and machine learning models. 
 
-## Description of the dataset and preprocessing steps.
-## Methodology for biomarker discovery and machine learning analysis.
-Transcriptome profiling and gene expression quantification data for lung adenocarcinoma were downloaded from the LUAD dataset in The Cancer Genome Atlas (TCGA) database. The study included 40 samples, consisting of 20 irregular smokers (less than one cigarette per day) and 20 regular smokers (more than three cigarettes per day), all of whom were white individuals with stage 1 tumors. Genes with the lowest expression levels were filtered out for further analysis.
-Differential Gene Expression Analysis Between Irregular and Regular Smokers in Lung Adenocarcinoma
+## Materials and Methods:
+Transcriptome profiling data for lung adenocarcinoma was obtained from the TCGA-LUAD dataset, including 40 samples (20 irregular and 20 regular smokers) of white individuals with stage 1 tumors. Low-expression genes were filtered out. Differential expression analysis between irregular and regular smokers was performed using TCGAbiolinks in R, with criteria of Fdr ≤ 0.01 and logFC ≥ 2. Results were visualized with heatmaps and volcano plots, and enrichment analysis was conducted after mapping ensembl IDs to gene IDs.
+ML analysis aimed to identify smoking-associated biomarkers in lung adenocarcinoma. After cleaning and transposing the RNA-seq data, feature selection was done via variance thresholding. The dataset was split into training and test sets, and a Random Forest classifier was tuned using GridSearchCV. Model performance was evaluated with metrics like the confusion matrix, classification report, and ROC-AUC curve. The top 10 important genes were identified, suggesting potential smoking-related biomarkers.
 
-Differential gene expression analysis was performed using the TCGA-LUAD dataset to compare irregular and regular smokers with lung adenocarcinoma (LUAD), a subtype of non-small cell lung cancer (NSCLC) linked to smoking. The TCGAanalyze_DEA function from the TCGAbiolinks package, utilizing the R package edgeR, was used to identify differentially expressed genes (DEGs). LogFC and false discovery rates (FDR) were reported, with FDR > 0.01 and |logFC| > 2 set as inclusion criteria. The `TCGAanalyze_LevelTab` function generated a results table summarizing gene expression across both conditions, revealing how smoking frequency impacts gene regulation in LUAD.
+## Results
+Gene expression profiles from TCGA-LUAD were used to compare Regular and Irregular Smokers. RNAseq data revealed several DEGs. The volcano plot showed distinct clustering of Regular and Irregular Smokers. Out of 33,439 genes, 741 were upregulated, and 2,313 were downregulated, and enrichment analysis highlighted gene regulation, transcription, and metabolic homeostasis processes. The ML model was evaluated using a confusion matrix, classification report, accuracy, and ROC curve. It predicted 3 true positives, 4 true negatives, 1 false positive, and 1 false negative, with an overall accuracy of 87.5%. Precision was 100% for irregular smokers and 75% for regular smokers, while the F1-scores were 0.89 and 0.86, respectively. The ROC AUC was 0.93, indicating strong classification performance.
 
-### Gene Function Enrichment Analysis
+## Conclusion
+This study explored smoking-associated biomarkers in stage I lung adenocarcinoma using transcriptomic profiling and machine learning. We identified 741 upregulated and 2,313 downregulated genes, with enrichment analysis highlighting key pathways like MODY signaling and melatonin degradation. The machine learning model achieved 87.5% accuracy in distinguishing regular and irregular smokers, identifying RGS1, RAB3B, and LINC01551 as top biomarkers. Previous research links Rab3B (Yao et al., 2024) and RGS1 (Wang et al., 2023) to lung adenocarcinoma aggressiveness and prognosis. These findings offer potential biomarkers for early diagnosis, prognosis, and targeted therapy in smoking-related lung cancer, warranting further validation in larger cohorts.
 
-The DEGs were mapped using the GO database to identify their biological and functional properties. Gene Ontology analysis was performed after converting Ensembl gene IDs to HGNC symbols via the biomaRt package for downstream analysis. Gene Set Enrichment Analysis (GSEA) was used to assess the biological significance of upregulated and downregulated genes, employing the TCGAanalyze_EAcomplete function to explore enriched Biological Processes (BP), Molecular Functions (MF), Cellular Components (CC), and pathways.
 
-## Results and interpretations of the identified biomarkers and model performance.
-## Conclusion and future directions for research.
