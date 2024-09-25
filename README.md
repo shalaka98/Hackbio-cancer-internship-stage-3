@@ -1,15 +1,13 @@
 > Hackbio-cancer-internship-stage-3
-## Identification of Smoking-Associated Biomarkers in Stage I Lung Adenocarcinoma through Transcriptomic Profiling and Machine Learning
+### Identification of Smoking-Associated Biomarkers in Stage I Lung Adenocarcinoma through Transcriptomic Profiling and Machine Learning
 
-
-
-## Table of Contents
+#### Table of Contents
 - **[Report](./Report.md)**: Detailed report of the analysis.
 - **[Code](./Code.md)**: for data preprocessing, visualization, and analysis.
 - **[Images](./Images/)**: Visualizations of the gene expression data, including heatmaps and other relevant figures.
 - **[Data](./Data/)**: Dataset used for analysis.
 
- ## Contributors
+ #### Contributors
 |Name|Slack ID|Linkedin|
 | ----------- |----------- |----------- |
 |Ayooluwa Joseph|@Jay1079| <a href="https://www.linkedin.com/in/ayooluwa-joseph/" target="_blank">	LinkedIn Profile</a> |
