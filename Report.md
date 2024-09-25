@@ -46,6 +46,18 @@ The ML model was evaluated using a confusion matrix, classification report, accu
 ## Conclusion:
 This study explored smoking-associated biomarkers in stage I lung adenocarcinoma using transcriptomic profiling and machine learning. We identified 741 upregulated and 2,313 downregulated genes, with enrichment analysis highlighting key pathways like MODY signaling and melatonin degradation. The machine learning model achieved 87.5% accuracy in distinguishing regular and irregular smokers, identifying RGS1, RAB3B, and LINC01551 as top biomarkers. Previous research links Rab3B (Yao et al., 2024) and RGS1 (Wang et al., 2023) to lung adenocarcinoma aggressiveness and prognosis. These findings offer potential biomarkers for early diagnosis, prognosis, and targeted therapy in smoking-related lung cancer, warranting further validation in larger cohorts.
 
+### References
+- Bray, F., Laversanne, M., Sung, H., Ferlay, J., Siegel, R. L., Soerjomataram, I., & Jemal, A. (2024). Global cancer statistics 2022: GLOBOCAN estimates of incidence and mortality worldwide for 36 cancers in 185 countries. CA: A Cancer Journal for Clinicians, 74(3), 229–263. https://doi.org/10.3322/caac.21834
+- Gridelli, C., Rossi, A., Carbone, D. P., Guarize, J., Karachaliou, N., Mok, T., Petrella, F., Spaggiari, L., & Rosell, R. (2015). Non-small-cell lung cancer. Nature Reviews Disease Primers, 1(1), 15009. https://doi.org/10.1038/nrdp.2015.9
+- Hecht, S. S. (1999). Tobacco Smoke Carcinogens and Lung Cancer. JNCI Journal of the National Cancer Institute, 91(14), 1194–1210. https://doi.org/10.1093/jnci/91.14.1194
+- Landi, M. T., Dracheva, T., Rotunno, M., Figueroa, J. D., Liu, H., Dasgupta, A., Mann, F. E., Fukuoka, J., Hames, M., Bergen, A. W., Murphy, S. E., Yang, P., Pesatori, A. C., Consonni, D., Bertazzi, P. A., Wacholder, S., Shih, J. H., Caporaso, N. E., & Jen, J. (2008). Gene expression signature of cigarette smoking and its role in lung adenocarcinoma development and survival. PloS One, 3(2), e1651. https://doi.org/10.1371/journal.pone.0001651
+- Liu, Y., Ni, R., Zhang, H., Miao, L., Wang, J., Jia, W., & Wang, Y. (2016). Identification of feature genes for smoking-related lung adenocarcinoma based on gene expression profile data. OncoTargets and Therapy, Volume 9, 7397–7407. https://doi.org/10.2147/OTT.S114230
+- Spira, A., Beane, J., Shah, V., Liu, G., Schembri, F., Yang, X., Palma, J., & Brody, J. S. (2004). Effects of cigarette smoke on the human airway epithelial cell transcriptome. Proceedings of the National Academy of Sciences, 101(27), 10143–10148. https://doi.org/10.1073/pnas.0401422101
+- Wang, Y., Chen, D., Liu, Y., Shi, D., Duan, C., Li, J., Shi, X., Zhang, Y., Yu, Z., Sun, N., Wang, W., Ma, Y., Xu, X., Otkur, W., Liu, X., Xia, T., Qi, H., Piao, H., & Liu, H. (2023). Multidirectional characterization of cellular composition and spatial architecture in human multiple primary lung cancers. Cell Death and Disease, 14(7). https://doi.org/10.1038/s41419-023-05992-w
+- Yao, G., Yu, S., Hou, F., Xiao, Z., Li, G., Ji, X., & Wang, J. (2024). Rab3B enhances the stabilization of DDX6 to promote lung adenocarcinoma aggressiveness. Molecular Medicine, 30(1). https://doi.org/10.1186/s10020-024-00848-1 
+
+
+
 ### Contributors:
 |Name|Slack ID|Linkedin|
 | ----------- |----------- |----------- |
