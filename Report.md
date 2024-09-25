@@ -1,15 +1,15 @@
 <h2 align="center">  Identification of Smoking-Associated Biomarkers in Stage I Lung Adenocarcinoma through Transcriptomic Profiling and Machine Learning </h2>
 
 <a align="center"> Table of Contents: </a>
-  <a href="#Introduction"> Introduction: </a> |
-  <a href="#Materials-and-Methods"> Materials and Methods: </a> | 
-  <a href="#Results"> Results: </a> | 
-  <a href="#Conclusion"> Conclusion: </a> |
-  <a href="#References"> References: </a> |
-  <a href="#Contributors"> Contributors: </a> 
+  <a href="#Introduction"> Introduction </a> |
+  <a href="#Materials-and-Methods"> Materials and Methods </a> | 
+  <a href="#Results"> Results </a> | 
+  <a href="#Conclusion"> Conclusion </a> |
+  <a href="#References"> References </a> |
+  <a href="#Contributors"> Contributors </a> 
 </a>
 
-## Introduction
+## Introduction:
 Lung cancer is one of the most common carcinomas in the world and ranks first both in incidence and in mortality (Bray et al., 2024).  Lung adenocarcinoma (LUAD) is the most common subtype of non-small cell lung cancer (NSCLC), and NSCLC accounts for approximately 85% of all lung cancer cases(Gridelli et al., 2015). Smoking is its strongest risk factor and there is a significant and positive correlation between cigarette smoke and lung cancer(Hecht, 1999).
 In this study, we aimed to identify potential smoking-associated biomarkers of stage 1 lung Adenocarcinoma based on smoking habits using transcriptomic data and machine learning models. 
 
