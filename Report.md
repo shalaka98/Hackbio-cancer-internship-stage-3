@@ -16,7 +16,11 @@ ML analysis aimed to identify smoking-associated biomarkers in lung adenocarcino
 
 ## Results
 Gene expression profiles from TCGA-LUAD were used to compare Regular and Irregular Smokers. RNAseq data revealed several DEGs. The volcano plot showed distinct clustering of Regular and Irregular Smokers. Out of 33,439 genes, 741 were upregulated, and 2,313 were downregulated, and enrichment analysis highlighted gene regulation, transcription, and metabolic homeostasis processes. 
+![TCGAvisualize_EAbarplot_Output_downreg](Images/TCGAvisualize_EAbarplot_Output_downreg.jpg)
+<p align="center">Fig 1: TCGAvisualize_EAbarplot_Output_downreg </p>
 
+![TCGAvisualize_EAbarplot_Output_upreg](Images/Images/TCGAvisualize_EAbarplot_Output_upreg.jpg)
+<p align="center">Fig 1:TCGAvisualize_EAbarplot_Output_upreg </p>
 
 
 The ML model was evaluated using a confusion matrix, classification report, accuracy, and ROC curve. It predicted 3 true positives, 4 true negatives, 1 false positive, and 1 false negative, with an overall accuracy of 87.5%. Precision was 100% for irregular smokers and 75% for regular smokers, while the F1-scores were 0.89 and 0.86, respectively. The ROC AUC was 0.93, indicating strong classification performance.
