@@ -9,21 +9,23 @@ library("limma")
 library("edgeR")
 library("EDASeq")
 library(gplots)
+
 #getProjectSummary("TCGA-LUAD")
 
 #Download and preprocess data
-
 lung_acarcinoma <- GDCquery(project = "TCGA-LUAD",
                 data.category = "Transcriptome Profiling",
                 data.type = "Gene Expression Quantification")
 GDCdownload(lung_acarcinoma)
 lung.data <- GDCprepare(lung_acarcinoma)
 head(lung.data)
+
 # Explore Some Metadata Information
 lung.data$definition
 lung.data$cigarettes_per_day
 lung.data$race
 count(lung.data$ajcc_pathologic_stage=="Stage IIIA", na.rm=T)
+
 #creating metadata table
 slotNames(lung.data)
 all_meta <- data.frame(a=lung.data$paper_expression_subtype)
@@ -34,6 +36,7 @@ lung_acarcinoma_meta <- data.frame("barcode"=lung.data$barcode,
                          "race"=lung.data$race,
                          "pathologic_stage"=lung.data$ajcc_pathologic_stage)
 head(lung_acarcinoma_meta)
+
 #filtering metadata for NA containing records
 NA_filtered_data <- na.omit(lung_acarcinoma_meta)
 head(NA_filtered_data)
@@ -41,16 +44,20 @@ head(NA_filtered_data)
 #select unstranded dataset
 luad.raw.data <- assays(lung.data) #help to extract information summarizing the experiment
 View(luad.raw.data$unstranded)
+
 #extracting 20 irregular and 20 regular smoker data from white people having stage I tumor
 selectedBarcodes <- c(subset(NA_filtered_data, race == "white" & pathologic_stage %in% c("Stage IA", "Stage IB") & sample_type == "Primary solid Tumor" & cigarettes_per_day < 1)$barcode[c(1:20)], subset(NA_filtered_data, race == "white" & pathologic_stage %in% c("Stage IA", "Stage IB") & sample_type == "Primary solid Tumor" & cigarettes_per_day > 3)$barcode[c(1:20)])
 selectedData <- luad.raw.data$unstranded[,c(selectedBarcodes)]
 View(selectedData)
+
 # Data normalization and filtering
 normData <- TCGAanalyze_Normalization(tabDF = selectedData, geneInfo = geneInfoHT, method = "geneLength")
+
 # filtering the genes with lowest expression
 filtData <- TCGAanalyze_Filtering(tabDF = normData,
                                   method = "quantile",
                                   qnt.cut = 0.25)
+
 # Annotate first 20 columns as 'irregular_smoker'
 colnames(filtData)[1:20] <- paste0("irregular_smoker_", 1:20)
 
@@ -59,8 +66,10 @@ colnames(filtData)[21:40] <- paste0("regular_smoker_", 1:20)
 
 #saving the normalized count data table as csv file where first 20 columns are for irregular smoker (<1 cigarette per day) and the last 20 columns are for regular smoker (>2 cigarettes per day) 
 write.csv(filtData, file = "Normalized_count_Data_final.csv", row.names = TRUE)
+
 #filtData <- read.csv("/home/hp/Documents/Stage_3_task/Normalized_count_Data_final.csv", row.names = 1)
 View(filtData)
+
 #Differential Expression Analysis
 selectResults <- TCGAanalyze_DEA(
   mat1 = filtData[, grep("^irregular_smoker_", colnames(filtData))],  # Selecting the 'irregular_smoker' columns
@@ -103,6 +112,7 @@ heatmap.2(x=as.matrix(heat.data),
           na.color = "black",
           srtCol = 45,
           ColSideColors = color_codes)
+
 #Enrichment analysis
 #View the volcano plot first
 # Sample plot: x-axis (logFC), y-axis (-log10(FDR))
@@ -126,6 +136,7 @@ downreg.genes <- getBM(attributes = c("ensembl_gene_id",'hgnc_symbol'),
                      filters = "ensembl_gene_id",
                      values = downreg.genes,
                      mart = mart)$hgnc_symbol
+
 #enrichment analysis for both
 up.EA <- TCGAanalyze_EAcomplete(TFname="Upregulated",upreg.genes)
 down.EA <- TCGAanalyze_EAcomplete(TFname="Downregulated",downreg.genes)
