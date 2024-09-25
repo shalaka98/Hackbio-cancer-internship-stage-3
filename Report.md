@@ -38,7 +38,7 @@ Gene expression profiles from TCGA-LUAD were used to compare Regular and Irregul
 
 <p align="center">
     <img src="Images/TCGAvisualize_EAbarplot_Output_upreg.jpg" alt="TCGAvisualize EAbarplot Output upreg" width="400"/>
-    <br>Fig 4: TCGAvisualize EAbarplot Output upregulated Genes
+    <br>Fig 4: TCGAvisualize EAbarplot Output Upregulated Genes
 
 
 The ML model was evaluated using a confusion matrix, classification report, accuracy, and ROC curve. It predicted 3 true positives, 4 true negatives, 1 false positive, and 1 false negative, with an overall accuracy of 87.5%. Precision was 100% for irregular smokers and 75% for regular smokers, while the F1-scores were 0.89 and 0.86, respectively. The ROC AUC was 0.93, indicating strong classification performance.
