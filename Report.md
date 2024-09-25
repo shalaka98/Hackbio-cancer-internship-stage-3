@@ -1,12 +1,12 @@
 <h2 align="center">  Identification of Smoking-Associated Biomarkers in Stage I Lung Adenocarcinoma through Transcriptomic Profiling and Machine Learning </h2>
 
 <a align="center"> Table of Contents: </a>
-  <a href="#Introduction"> Introduction </a> |
-  <a href="#Materials-and-Methods"> Materials and Methods </a> | 
-  <a href="#Results"> Results </a> | 
-  <a href="#Conclusion"> Conclusion </a> |
-  <a href="#References"> References </a> |
-  <a href="#Contributors"> Contributors </a> 
+  <a href="#Introduction"> Introduction: </a> |
+  <a href="#Materials-and-Methods"> Materials and Methods: </a> | 
+  <a href="#Results"> Results: </a> | 
+  <a href="#Conclusion"> Conclusion: </a> |
+  <a href="#References"> References: </a> |
+  <a href="#Contributors"> Contributors: </a> 
 </a>
 
 ## Introduction
