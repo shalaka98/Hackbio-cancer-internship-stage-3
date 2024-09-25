@@ -9,7 +9,7 @@ In this study, we aimed to identify potential smoking-associated biomarkers of s
 ## Materials and Methods:
 Transcriptome profiling data for lung adenocarcinoma was obtained from the TCGA-LUAD dataset, including 40 samples (20 irregular and 20 regular smokers) of white individuals with stage 1 tumors. Low-expression genes were filtered out. Differential expression analysis between irregular and regular smokers was performed using TCGAbiolinks in R, with criteria of Fdr ≤ 0.01 and logFC ≥ 2. Results were visualized with heatmaps and volcano plots, and enrichment analysis was conducted after mapping ensembl IDs to gene IDs.
 
-![Volcano Plot with Colored Points](Images/Volcano Plot with Colored Points.png)
+![Volcano Plot with Colored Points](/Images/Volcano Plot with Colored Points.png)
 <p align="center"> Fig 1: Volcano Plot with Colored Points </p>
 
 ML analysis aimed to identify smoking-associated biomarkers in lung adenocarcinoma. After cleaning and transposing the RNA-seq data, feature selection was done via variance thresholding. The dataset was split into training and test sets, and a Random Forest classifier was tuned using GridSearchCV. Model performance was evaluated with metrics like the confusion matrix, classification report, and ROC-AUC curve. The top 10 important genes were identified, suggesting potential smoking-related biomarkers.
@@ -21,13 +21,13 @@ Gene expression profiles from TCGA-LUAD were used to compare Regular and Irregul
 
 The ML model was evaluated using a confusion matrix, classification report, accuracy, and ROC curve. It predicted 3 true positives, 4 true negatives, 1 false positive, and 1 false negative, with an overall accuracy of 87.5%. Precision was 100% for irregular smokers and 75% for regular smokers, while the F1-scores were 0.89 and 0.86, respectively. The ROC AUC was 0.93, indicating strong classification performance.
 
-![Confusion Matrix_ml](Images/Confusion Matrix_ml.png)
+![Confusion Matrix_ml](/Images/Confusion Matrix_ml.png)
 <p align="center">Fig 1: Confusion Matrix </p>
 
-![ROC Curve_Ml](Images/ROC Curve_Ml.png)
+![ROC Curve_Ml](/Images/ROC Curve_Ml.png)
 <p align="center">Fig 1: ROC Curve_Ml </p>
 
-![Top 10 genes in predicting smoking habit from samples_ml](Images/Top 10 genes in predicting smoking habit from samples_ml.png)
+![Top 10 genes in predicting smoking habit from samples_ml](/Images/Top 10 genes in predicting smoking habit from samples_ml.png)
 <p align="center">Fig 1: Top 10 genes in predicting smoking habit from samples_ml </p>
 
 
