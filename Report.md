@@ -19,7 +19,7 @@ Gene expression profiles from TCGA-LUAD were used to compare Regular and Irregul
 ![TCGAvisualize_EAbarplot_Output_downreg](Images/TCGAvisualize_EAbarplot_Output_downreg.jpg)
 <p align="center">Fig 1: TCGAvisualize_EAbarplot_Output_downreg </p>
 
-![TCGAvisualize_EAbarplot_Output_upreg](Images/Images/TCGAvisualize_EAbarplot_Output_upreg.jpg)
+![TCGAvisualize_EAbarplot_Output_upreg](Images/TCGAvisualize_EAbarplot_Output_upreg.jpg)
 <p align="center">Fig 1: TCGAvisualize_EAbarplot_Output_upreg </p>
 
 ![Heatmap of DEGs by Smoking Status](Images/Heatmap_of_DEGs_by_Smoking_Status.png)
