@@ -40,11 +40,6 @@ Gene expression profiles from TCGA-LUAD were used to compare Regular and Irregul
     <img src="Images/TCGAvisualize_EAbarplot_Output_upreg.jpg" alt="TCGAvisualize EAbarplot Output upreg" width="400"/>
     <br>Fig 4: TCGAvisualize EAbarplot Output Upregulated Genes
 
-<p align="center">
-    <img src="Images/Average_Precision_Score.png" alt="Average Precision Score" width="400"/>
-    <br>Fig 5: Average Precision Score
-
-
 The ML model was evaluated using a confusion matrix, classification report, accuracy, and ROC curve. It predicted 3 true positives, 4 true negatives, 1 false positive, and 1 false negative, with an overall accuracy of 87.5%. Precision was 100% for irregular smokers and 75% for regular smokers, while the F1-scores were 0.89 and 0.86, respectively. The ROC AUC was 0.93, indicating strong classification performance.
 
 ![Confusion Matrix_ml](Images/Confusion_Matrix_ml.png)
@@ -55,6 +50,10 @@ The ML model was evaluated using a confusion matrix, classification report, accu
 
 ![Top 10 genes in predicting smoking habit from samples_ml](/Images/Top_10_genes_in_predicting_smoking_habit_from_samples_ml.png)
 <p align="center">Fig 7: Top 10 genes in predicting smoking habit from samples_ml </p>
+
+<p align="center">
+    <img src="Images/Average_Precision_Score.png" alt="Average Precision Score" width="400"/>
+    <br>Fig 8: Average Precision Score
 
 ## Conclusion:
 This study explored smoking-associated biomarkers in stage I lung adenocarcinoma using transcriptomic profiling and machine learning. We identified 741 upregulated and 2,313 downregulated genes, with enrichment analysis highlighting key pathways like MODY signaling and melatonin degradation. The machine learning model achieved 87.5% accuracy in distinguishing regular and irregular smokers, identifying RGS1, RAB3B, and LINC01551 as top biomarkers. Previous research links Rab3B (Yao et al., 2024) and RGS1 (Wang et al., 2023) to lung adenocarcinoma aggressiveness and prognosis. These findings offer potential biomarkers for early diagnosis, prognosis, and targeted therapy in smoking-related lung cancer, warranting further validation in larger cohorts.
